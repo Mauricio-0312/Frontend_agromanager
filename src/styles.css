@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* custom global styles */
+body { @apply bg-gray-50 text-gray-800 }
+
+
+/* small utility cards */
+.card { @apply bg-white rounded-lg shadow p-4 }
+
+
+/* layout */
+.app-shell { @apply min-h-screen flex }
+.sidebar { @apply w-64 bg-white border-r p-4 }
+.main { @apply flex-1 p-6 }
+.navbar { @apply h-16 flex items-center justify-between px-6 bg-white border-b }
