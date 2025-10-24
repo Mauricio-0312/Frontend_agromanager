@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { api } from '../api'
+import { Link } from 'react-router-dom'
 
 export default function Users(){
     const [users, setUsers] = useState([])
@@ -26,7 +27,7 @@ export default function Users(){
                         {users.map(u => (
                             <tr key={u.ID || u.id || u.Email || u.email}>
                                 <td className="px-4 py-2">{u.Email || u.email}</td>
-                                <td className="px-4 py-2">{u.Name || u.name}</td>
+                                <td className="px-4 py-2"><Link to={`/users/${u.ID || u.id}`} >{u.Name || u.name}</Link></td>
                                 <td className="px-4 py-2">{u.Role || u.role}</td>
                                 <td className="px-4 py-2"><button onClick={()=>startEdit(u)} className="mr-2 btn bg-blue-500 text-white px-2 py-1 rounded">Editar</button><button onClick={()=>remove(u.ID || u.id)} className="btn bg-red-500 text-white px-2 py-1 rounded">Eliminar</button></td>
                             </tr>

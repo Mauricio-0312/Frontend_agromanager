@@ -13,7 +13,7 @@ export default function Login() {
             e.preventDefault();
             try {
             await login(email, password);
-            window.location.href = "/dashboard";
+            window.location.href = "/projects";
             } catch {
             setErr("Usuario o contraseña incorrectos");
             }

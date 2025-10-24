@@ -4,7 +4,9 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import AdminPanel from './pages/AdminPanel'
 import Users from './pages/Users'
+import UserDetail from './pages/UserDetail'
 import Projects from './pages/Projects'
+import ProjectDetail from './pages/ProjectDetail'
 import { AuthContext } from './context/AuthContext'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
@@ -31,7 +33,9 @@ export default function App() {
                         <Route path="/dashboard" element={<Protected><Dashboard /></Protected>} />
                         <Route path="/admin" element={<Protected adminOnly={true}><AdminPanel /></Protected>} />
                         <Route path="/users" element={<Protected><Users /></Protected>} />
+                        <Route path="/users/:id" element={<Protected><UserDetail /></Protected>} />
                         <Route path="/projects" element={<Protected><Projects /></Protected>} />
+                        <Route path="/projects/:id" element={<Protected><ProjectDetail /></Protected>} />
                         <Route path="/" element={<Navigate to="/dashboard" replace />} />
                     </Routes>
                 </main>

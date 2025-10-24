@@ -14,15 +14,17 @@ export default function Sidebar() {
 
 
             <nav className="flex flex-col gap-2">
-                <NavLink to="/dashboard" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Dashboard</NavLink>
+                {/* <NavLink to="/dashboard" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Dashboard</NavLink> */}
                 {user && (
                     <>
                         <NavLink to="/projects" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Proyectos</NavLink>
-                        <NavLink to="/users" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Usuarios</NavLink>
                     </>
                 )}
                 {user && user.role === 'admin' && (
-                    <NavLink to="/admin" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Administración</NavLink>
+                    <>
+                        <NavLink to="/users" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Usuarios</NavLink>
+                        <NavLink to="/admin" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Administración</NavLink>
+                    </>
                 )}
             </nav>
 
