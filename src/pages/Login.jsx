@@ -4,22 +4,20 @@ import { AuthContext } from '../context/AuthContext'
 
 
 export default function Login() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [err, setErr] = useState(null)
-    const { login } = useContext(AuthContext)
-    const navigate = useNavigate()
+     const { login } = useContext(AuthContext);
+        const [email, setEmail] = useState("");
+        const [password, setPassword] = useState("");
+        const [err, setErr] = useState("");
 
-
-    async function submit(e) {
-        e.preventDefault()
-        try {
-            const res = await login(email, password)
-            if (res.data && res.data.token) navigate('/')
-        } catch (err) {
-            setErr(err.response?.data?.error || 'Error en login')
-        }
-    }
+        const submit = async (e) => {
+            e.preventDefault();
+            try {
+            await login(email, password);
+            window.location.href = "/dashboard";
+            } catch {
+            setErr("Usuario o contraseña incorrectos");
+            }
+        };
 
 
     return (

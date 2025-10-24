@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import AdminPanel from './pages/AdminPanel'
+import Users from './pages/Users'
+import Projects from './pages/Projects'
 import { AuthContext } from './context/AuthContext'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
@@ -28,6 +30,8 @@ export default function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/dashboard" element={<Protected><Dashboard /></Protected>} />
                         <Route path="/admin" element={<Protected adminOnly={true}><AdminPanel /></Protected>} />
+                        <Route path="/users" element={<Protected><Users /></Protected>} />
+                        <Route path="/projects" element={<Protected><Projects /></Protected>} />
                         <Route path="/" element={<Navigate to="/dashboard" replace />} />
                     </Routes>
                 </main>
