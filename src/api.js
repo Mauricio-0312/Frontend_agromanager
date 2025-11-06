@@ -39,6 +39,27 @@ export const api = {
     updateProject: (id, payload) => client.put(`/projects/${id}`, payload),
     closeProject: (id) => client.patch(`/projects/${id}/close`),
     exportProjects: () => client.get('/csv/projects', { responseType: 'blob' }),
+
+    // labores agronómicas
+    createLabor: (payload) => client.post('/labores', payload),
+    fetchLabores: (q) => client.get('/labores', { params: { q } }),
+    getLabor: (id) => client.get(`/labores/${id}`),
+    updateLabor: (id, payload) => client.put(`/labores/${id}`, payload),
+    deleteLabor: (id) => client.delete(`/labores/${id}`),
+
+    // equipos e implementos
+    createEquipo: (payload) => client.post('/equipos', payload),
+    fetchEquipos: (q) => client.get('/equipos', { params: { q } }),
+    getEquipo: (id) => client.get(`/equipos/${id}`),
+    updateEquipo: (id, payload) => client.put(`/equipos/${id}`, payload),
+    deleteEquipo: (id) => client.delete(`/equipos/${id}`),
+
+    // actividades agrícolas
+    createActividad: (payload) => client.post('/activities', payload),
+    fetchActividades: (params) => client.get('/activities', { params }),
+    getActividad: (id) => client.get(`/activities/${id}`),
+    updateActividad: (id, payload) => client.put(`/activities/${id}`, payload),
+    deleteActividad: (id) => client.delete(`/activities/${id}`),
 }
 
 
