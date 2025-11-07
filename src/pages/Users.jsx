@@ -15,7 +15,7 @@ export default function Users(){
     async function remove(id){ if(!confirm('Eliminar usuario?')) return; try{ await api.deleteUser(id); load() }catch(err){ alert('Error') } }
 
     function startEdit(u){ setEditing(u) }
-    async function saveEdit(e){ e.preventDefault(); try{ const payload = { name: e.target.name.value, role: e.target.role.value }; await api.updateUser(editing.ID || editing.id, payload); setEditing(null); load() }catch(err){ alert('Error') } }
+    async function saveEdit(e){ e.preventDefault(); try{ const payload = { name: e.target.name.value, role: e.target.role.value, dni: e.target.dni.value }; await api.updateUser(editing.ID || editing.id, payload); setEditing(null); load() }catch(err){ alert('Error') } }
 
     return (
         <div className="grid lg:grid-cols-3 gap-6">
@@ -41,6 +41,7 @@ export default function Users(){
                 {editing ? (
                     <form onSubmit={saveEdit} className="flex flex-col gap-2">
                         <input name="name" defaultValue={editing.Name || editing.name} className="p-2 border rounded" />
+                        <input name="dni" defaultValue={editing.dni || editing.Dni || ''} className="p-2 border rounded" placeholder="Cédula" />
                         <select name="role" defaultValue={editing.Role || editing.role} className="p-2 border rounded">
                             {/* <option value="user">user</option> */}
                             <option value="admin">admin</option>

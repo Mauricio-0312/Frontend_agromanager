@@ -47,7 +47,8 @@ export default function UserDetail(){
                     <div>
                         <h3 className="text-2xl font-semibold text-gray-800">{user.Name || user.name}</h3>
                         <div className="text-sm text-gray-500">{user.Email || user.email}</div>
-                        <div className="mt-2 text-xs text-gray-500">Rol: <span className="font-medium text-gray-700">{user.Role || user.role}</span></div>
+                            <div className="mt-2 text-xs text-gray-500">Cédula: <span className="font-medium text-gray-700">{user.dni || user.Dni || '-'}</span></div>
+                            <div className="mt-2 text-xs text-gray-500">Rol: <span className="font-medium text-gray-700">{user.Role || user.role}</span></div>
                     </div>
                     <Link to="/users" className="btn bg-gray-100 text-gray-700 px-3 py-1 rounded">Volver</Link>
                 </div>
