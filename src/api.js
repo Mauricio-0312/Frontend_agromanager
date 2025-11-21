@@ -60,6 +60,20 @@ export const api = {
     getActividad: (id) => client.get(`/activities/${id}`),
     updateActividad: (id, payload) => client.put(`/activities/${id}`, payload),
     deleteActividad: (id) => client.delete(`/activities/${id}`),
+
+    // units of measure
+    createUnit: (payload) => client.post('/units', payload),
+    fetchUnits: () => client.get('/units'),
+    getUnit: (id) => client.get(`/units/${id}`),
+    updateUnit: (id, payload) => client.put(`/units/${id}`, payload),
+    deleteUnit: (id) => client.delete(`/units/${id}`),
+
+    // logs
+    createLog: (payload) => client.post('/logs', payload),
+    fetchLogs: (q) => client.get('/logs', { params: { q } }),
+    getLog: (id) => client.get(`/logs/${id}`),
+    deleteLog: (id) => client.delete(`/logs/${id}`),
+    countLogs: () => client.get('/logs/count'),
 }
 
 

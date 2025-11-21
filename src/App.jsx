@@ -10,6 +10,8 @@ import ProjectDetail from './pages/ProjectDetail'
 import Labores from './pages/Labores'
 import Equipos from './pages/Equipos'
 import Activities from './pages/Activities'
+import Units from './pages/Units'
+import Logs from './pages/Logs'
 import { AuthContext } from './context/AuthContext'
 import Sidebar from './components/Sidebar'
 import Navbar from './components/Navbar'
@@ -19,7 +21,7 @@ function Protected({ children, adminOnly = false }) {
     const { user, loading } = useContext(AuthContext)
     if (loading) return <div className="p-6">Cargando...</div>
     if (!user) return <Navigate to="/login" replace />
-    if (adminOnly && user.role !== 'admin') return <Navigate to="/dashboard" replace />
+    if (adminOnly && user.role !== 'admin') return <Navigate to="/projects" replace />
     return children
 }
 
@@ -33,7 +35,6 @@ export default function App() {
                 <main className="main">
                     <Routes>
                         <Route path="/login" element={<Login />} />
-                        <Route path="/dashboard" element={<Protected><Dashboard /></Protected>} />
                         <Route path="/admin" element={<Protected adminOnly={true}><AdminPanel /></Protected>} />
                         <Route path="/users" element={<Protected><Users /></Protected>} />
                         <Route path="/users/:id" element={<Protected><UserDetail /></Protected>} />
@@ -42,7 +43,9 @@ export default function App() {
                         <Route path="/labores" element={<Protected><Labores /></Protected>} />
                         <Route path="/equipos" element={<Protected><Equipos /></Protected>} />
                         <Route path="/activities" element={<Protected><Activities /></Protected>} />
-                        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                        <Route path="/units" element={<Protected><Units /></Protected>} />
+                        <Route path="/logs" element={<Protected adminOnly={true}><Logs /></Protected>} />
+                        <Route path="/" element={<Navigate to="/projects" replace />} />
                     </Routes>
                 </main>
             </div>
