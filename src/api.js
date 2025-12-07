@@ -74,6 +74,25 @@ export const api = {
     getLog: (id) => client.get(`/logs/${id}`),
     deleteLog: (id) => client.delete(`/logs/${id}`),
     countLogs: () => client.get('/logs/count'),
+
+    // plans and costs
+    getPlanesAccion: (projectId) => client.get(`/projects/${projectId}/planes-accion`),
+    createPlanAccion: (projectId, payload) => client.post(`/projects/${projectId}/planes-accion`, payload),
+    updatePlanAccion: (id, payload) => client.put(`/planes-accion/${id}`, payload),
+    deletePlanAccion: (id) => client.delete(`/planes-accion/${id}`),
+    getPlanAccion: (id) => client.get(`/planes-accion/${id}`),
+
+    getCostosHumanos: (planId) => client.get(`/planes-accion/${planId}/costos-humanos`),
+    getCostoHumano: (id) => client.get(`/costos-humanos/${id}`),
+    createCostoHumano: (planId, payload) => client.post(`/planes-accion/${planId}/costos-humanos`, payload),
+    updateCostoHumano: (id, payload) => client.put(`/costos-humanos/${id}`, payload),
+    deleteCostoHumano: (id) => client.delete(`/costos-humanos/${id}`),
+
+    getCostosMateriales: (planId) => client.get(`/planes-accion/${planId}/costos-materiales`),
+    getCostoMaterial: (id) => client.get(`/costos-materiales/${id}`),
+    createCostoMaterial: (planId, payload) => client.post(`/planes-accion/${planId}/costos-materiales`, payload),
+    updateCostoMaterial: (id, payload) => client.put(`/costos-materiales/${id}`, payload),
+    deleteCostoMaterial: (id) => client.delete(`/costos-materiales/${id}`),
 }
 
 

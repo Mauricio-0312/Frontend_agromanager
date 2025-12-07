@@ -232,6 +232,31 @@ export default function ProjectDetail(){
                     </div>
                 </form>
             </div>
+
+            {/* Nuevas secciones: Planes de Acción y Costos */}
+            <div className="mt-8">
+                <h4 className="text-lg font-semibold mb-3">Planes de Acción</h4>
+                <div className="space-y-3">
+                    <Link to={`/projects/${id}/planes-accion`} className="block p-4 bg-blue-50 border rounded-lg shadow-sm hover:bg-blue-100 transition">
+                        <div className="text-sm font-medium text-blue-700">Ver Planes de Acción</div>
+                        <div className="text-xs text-gray-500">Accede y edita los planes de acción del proyecto</div>
+                    </Link>
+                </div>
+            </div>
+
+            {/* <div className="mt-6">
+                <h4 className="text-lg font-semibold mb-3">Costos</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <Link to={`/projects/${id}/planes-accion/costos-humano`} className="block p-4 bg-gray-50 border rounded-lg shadow-sm hover:bg-gray-100 transition">
+                        <div className="text-sm font-medium text-gray-700">Costos Humanos</div>
+                        <div className="text-xs text-gray-500">Detalle de costos por recursos humanos</div>
+                    </Link>
+                    <Link to={`/projects/${id}/planes-accion/costos-materiales`} className="block p-4 bg-gray-50 border rounded-lg shadow-sm hover:bg-gray-100 transition">
+                        <div className="text-sm font-medium text-gray-700">Costos Materiales</div>
+                        <div className="text-xs text-gray-500">Detalle de costos por materiales utilizados</div>
+                    </Link>
+                </div>
+            </div> */}
         </div>
     )
 }

@@ -27,6 +27,7 @@ export default function Sidebar() {
                     <>
                         <NavLink to="/users" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Usuarios</NavLink>
                         <NavLink to="/admin" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Administración</NavLink>
+                        <NavLink to="/labores" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Labores</NavLink>
                         <NavLink to="/units" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Unidades de medidas</NavLink>
                         <NavLink to="/logs" className={({ isActive }) => `px-3 py-2 rounded ${isActive ? 'bg-green-50 font-medium' : 'text-gray-700'}`}>Logger de Eventos</NavLink>
                     </>
