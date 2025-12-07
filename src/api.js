@@ -70,7 +70,8 @@ export const api = {
 
     // logs
     createLog: (payload) => client.post('/logs', payload),
-    fetchLogs: (q) => client.get('/logs', { params: { q } }),
+    // fetchLogs accepts a params object: { q, day, date, month, year, quarter, start, end }
+    fetchLogs: (params) => client.get('/logs', { params }),
     getLog: (id) => client.get(`/logs/${id}`),
     deleteLog: (id) => client.delete(`/logs/${id}`),
     countLogs: () => client.get('/logs/count'),
